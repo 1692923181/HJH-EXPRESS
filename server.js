@@ -7,6 +7,10 @@ app.use(express.urlencoded({extend:true}))
 
 //中间键调用，下面这行代码，实现了给req加上一个cookise属性，获取cookie数据
 app.use(cookieParser())
+
+//中间件使用，静态资源托管设置
+app.use(express.static("public"))
+
 //  TODO路由
 app.get("/",(req,res)=>{
     // res.write("hellow express")
